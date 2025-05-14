@@ -1,0 +1,56 @@
+import pygame
+import sys
+
+
+pygame.init()
+
+
+WIDTH, HEIGHT = 400, 400
+screen = pygame.display.set_mode((WIDTH, HEIGHT))
+pygame.display.set_caption("Cara Graciosa")
+
+
+YELLOW = (255, 255, 0)
+WHITE = (255, 255, 255)
+BLACK = (0, 0, 0)
+RED = (255, 0, 0)
+BLUE = (0, 0, 255)
+GREEN = (0, 255, 0)
+DARK_BLUE = (0, 0, 150)
+
+
+running = True
+while running:
+    screen.fill((200, 200, 200))  # Fondo gris
+
+
+    pygame.draw.circle(screen, YELLOW, (200, 200), 100)
+
+
+    pygame.draw.circle(screen, WHITE, (160, 170), 20)
+    pygame.draw.circle(screen, WHITE, (240, 170), 20)
+    pygame.draw.circle(screen, BLACK, (160, 170), 10)
+    pygame.draw.circle(screen, BLACK, (240, 170), 10)
+
+
+    pygame.draw.rect(screen, BLACK, (170, 230, 60, 20))
+
+
+    pygame.draw.polygon(screen, RED, [(190, 190), (210, 190), (200, 210)])
+
+
+    pygame.draw.polygon(screen, BLUE, [(80, 140), (120, 80), (160, 140)])  # Oreja izquierda
+    pygame.draw.polygon(screen, BLUE, [(320, 140), (280, 80), (240, 140)])  # Oreja derecha
+
+
+    pygame.draw.ellipse(screen, DARK_BLUE, (190, 235, 20, 40))
+
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+
+    pygame.display.flip()
+
+pygame.quit()
+sys.exit()
+
